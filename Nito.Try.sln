@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nito.Try", "src\Nito.Try\Nito.Try.csproj", "{375148DB-4829-47A8-9B19-325D13C9FAE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "test\UnitTests\UnitTests.csproj", "{20473621-F87E-4318-AC8F-36C24FAFC33D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{375148DB-4829-47A8-9B19-325D13C9FAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375148DB-4829-47A8-9B19-325D13C9FAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375148DB-4829-47A8-9B19-325D13C9FAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375148DB-4829-47A8-9B19-325D13C9FAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20473621-F87E-4318-AC8F-36C24FAFC33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20473621-F87E-4318-AC8F-36C24FAFC33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20473621-F87E-4318-AC8F-36C24FAFC33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20473621-F87E-4318-AC8F-36C24FAFC33D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F537FF9-1559-435D-8D20-E530DE385908}
+	EndGlobalSection
+EndGlobal

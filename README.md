@@ -1,7 +1,7 @@
 ![Logo](Icon.128.png)
 
 # Try
-The Try monad (Error/Exceptional monad) for C#, particularly useful for railroad programming, e.g., with TPL Dataflow.
+The Try monad (Error/Exceptional monad) for C#, particularly useful for railroad programming, [e.g., with TPL Dataflow](https://github.com/StephenCleary/Try/blob/fb28ba54651a220faea3f7acf1455531d782724d/test/UnitTests/Examples/DataflowExample.cs).
 
 [![NuGet](https://img.shields.io/nuget/v/Nito.Try.svg)](https://www.nuget.org/packages/Nito.Try/) [![netstandard 1.0](https://img.shields.io/badge/netstandard-1.0-brightgreen.svg)](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) [![netstandard 2.0](https://img.shields.io/badge/netstandard-2.0-brightgreen.svg)](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) [![Code Coverage](https://coveralls.io/repos/github/StephenCleary/Try/badge.svg?branch=master)](https://coveralls.io/github/StephenCleary/Try?branch=master) [![Build status](https://ci.appveyor.com/api/projects/status/nuhqjj1b6j0dquvf/branch/master?svg=true)](https://ci.appveyor.com/project/StephenCleary/try/branch/master)
 

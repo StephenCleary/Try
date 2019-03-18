@@ -70,6 +70,26 @@ namespace UnitTests
         }
 
         [Fact]
+        public void ToString_ForValue_ContainsValue()
+        {
+            var t = Try.FromValue(13);
+            Assert.Contains("13", t.ToString());
+        }
+
+        [Fact]
+        public void ToString_ForException_ContainsExceptionMessage()
+        {
+            var t = Try.FromException<int>(new InvalidOperationException("test"));
+            Assert.Contains("test", t.ToString());
+        }
+
+        [Fact]
+        public void FromException_ExceptionIsNull_Throws()
+        {
+            Assert.Throws<ArgumentNullException>(() => Try.FromException<int>(null));
+        }
+
+        [Fact]
         public void Deconstruct_ForValue_OnlyDeconstructsValue()
         {
             var t = Try.FromValue(13);

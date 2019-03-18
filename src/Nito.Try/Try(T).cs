@@ -138,6 +138,9 @@ namespace Nito
         /// </summary>
         public T Value => IsException ? throw Rethrow() : _value;
 
+        /// <summary>
+        /// A string representation, useful for debugging.
+        /// </summary>
         public override string ToString() => IsException ? $"Exception: {_exception}" : $"Value: {_value}";
 
         private Try(Exception exception, T value, bool isException)

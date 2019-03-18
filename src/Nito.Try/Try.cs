@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 
 namespace Nito
 {
+    /// <summary>
+    /// Static factory methods for <see cref="Try{T}"/> types.
+    /// </summary>
     public static class Try
     {
         /// <summary>

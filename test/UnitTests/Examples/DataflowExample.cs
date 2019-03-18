@@ -66,10 +66,12 @@ namespace UnitTests.Examples
             Assert.Equal(1, result1.Value);
             var result2 = outputBlock.Receive();
             Assert.True(result2.IsException);
-            Assert.Throws<InvalidOperationException>(() => result2.Value);
+            var result2Exception = Assert.Throws<InvalidOperationException>(() => result2.Value);
+            Assert.Equal("Power of 2 found: 2", result2Exception.Message);
             var result3 = outputBlock.Receive();
             Assert.True(result3.IsException);
-            Assert.Throws<InvalidOperationException>(() => result3.Value);
+            var result3Exception = Assert.Throws<InvalidOperationException>(() => result3.Value);
+            Assert.Equal("Power of 3 found: 3", result3Exception.Message);
             var result5 = outputBlock.Receive();
             Assert.Equal(5, result5.Value);
 

@@ -1,4 +1,4 @@
-![Logo](Logo.128.png)
+![Logo](Icon.128.png)
 
 # Try
 The Try monad (Error/Exceptional monad) for C#, particularly useful for railroad programming, e.g., with TPL Dataflow.

@@ -35,6 +35,7 @@ namespace UnitTests.Examples
 
             inputBlock.Complete();
             await Assert.ThrowsAnyAsync<Exception>(() => outputBlock.Completion);
+            await Assert.ThrowsAnyAsync<Exception>(() => inputBlock.Completion);
             Assert.True(inputBlock.Completion.IsFaulted);
             Assert.True(outputBlock.Completion.IsFaulted);
         }

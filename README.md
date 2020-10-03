@@ -2,7 +2,6 @@
 
 # Try [![Build status](https://github.com/StephenCleary/Try/workflows/Build/badge.svg)](https://github.com/StephenCleary/Try/actions?query=workflow%3ABuild) [![codecov](https://codecov.io/gh/StephenCleary/Try/branch/master/graph/badge.svg)](https://codecov.io/gh/StephenCleary/Try) [![NuGet version](https://badge.fury.io/nu/Nito.Try.svg)](https://www.nuget.org/packages/Nito.Try) [![API docs](https://img.shields.io/badge/API-dotnetapis-blue.svg)](http://dotnetapis.com/pkg/Nito.Try)
 
-# Try
 The Try monad (Error/Exceptional monad) for C#, particularly useful for railroad programming, [e.g., with TPL Dataflow](https://github.com/StephenCleary/Try/blob/fb28ba54651a220faea3f7acf1455531d782724d/test/UnitTests/Examples/DataflowExample.cs).
 
 [![netstandard 1.0](https://img.shields.io/badge/netstandard-1.0-brightgreen.svg)](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) [![netstandard 2.0](https://img.shields.io/badge/netstandard-2.0-brightgreen.svg)](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)

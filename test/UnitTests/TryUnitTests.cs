@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Nito;
 using Xunit;
@@ -136,6 +133,31 @@ namespace UnitTests
         }
 
         [Fact]
+        public void Match_ForValue_OnlyExecutesValueAction()
+        {
+            var exceptionInvoked = false;
+            Exception exception = null;
+            var valueInvoked = false;
+            int? value = 0;
+            var t = Try.FromValue(13);
+            t.Match(
+                ex =>
+                {
+                    exceptionInvoked = true;
+                    exception = ex;
+                },
+                v =>
+                {
+                    valueInvoked = true;
+                    value = v;
+                });
+            Assert.False(exceptionInvoked);
+            Assert.True(valueInvoked);
+            Assert.Equal(13, value);
+            Assert.Null(exception);
+        }
+
+        [Fact]
         public void Match_ForException_OnlyExecutesExceptionFunc()
         {
             var exceptionInvoked = false;
@@ -155,6 +177,29 @@ namespace UnitTests
                     valueInvoked = true;
                     value = v;
                     return 5;
+                });
+            Assert.True(exceptionInvoked);
+            Assert.False(valueInvoked);
+            Assert.IsType<InvalidOperationException>(exception);
+            Assert.Equal("test", exception.Message);
+        }
+
+        [Fact]
+        public void Match_ForException_OnlyExecutesExceptionAction()
+        {
+            var exceptionInvoked = false;
+            Exception exception = null;
+            var valueInvoked = false;
+            var t = Try.FromException<int>(new InvalidOperationException("test"));
+            t.Match(
+                ex =>
+                {
+                    exceptionInvoked = true;
+                    exception = ex;
+                },
+                v =>
+                {
+                    valueInvoked = true;
                 });
             Assert.True(exceptionInvoked);
             Assert.False(valueInvoked);

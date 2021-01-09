@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Nito
@@ -105,10 +103,29 @@ namespace Nito
         }
 
         /// <summary>
-        /// Executes an action for the wrapped exception or value.
+        /// Executes a method (Action) for the wrapped exception or value.
         /// </summary>
-        /// <param name="whenException">The action to execute if this instance is an exception.</param>
-        /// <param name="whenValue">The action to execute if this instance is a value.</param>
+        /// <param name="whenException">The method to execute if this instance is an exception.</param>
+        /// <param name="whenValue">The method to execute if this instance is a value.</param>
+        public void Match(Action<Exception> whenException, Action<T> whenValue)
+        {
+            _ = whenException ?? throw new ArgumentNullException(nameof(whenException));
+            _ = whenValue ?? throw new ArgumentNullException(nameof(whenValue));
+            if (IsException)
+            {
+                whenException(_exception!);
+            }
+            else
+            {
+                whenValue(_value);
+            }
+        }
+
+        /// <summary>
+        /// Executes a method (Func) for the wrapped exception or value.
+        /// </summary>
+        /// <param name="whenException">The method to execute if this instance is an exception.</param>
+        /// <param name="whenValue">The method to execute if this instance is a value.</param>
         public TResult Match<TResult>(Func<Exception, TResult> whenException, Func<T, TResult> whenValue)
         {
             _ = whenException ?? throw new ArgumentNullException(nameof(whenException));

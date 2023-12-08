@@ -178,7 +178,7 @@ namespace Nito
 
         private Exception Rethrow()
         {
-            ExceptionDispatchInfo.Capture(_exception).Throw();
+            ExceptionDispatchInfo.Capture(_exception!).Throw();
             return _exception!;
         }
 

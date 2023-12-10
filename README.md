@@ -130,3 +130,33 @@ Try<int> t2 = t1.Map(v1 =>
     return v1.Value + 10;
 });
 ```
+
+### Short Circuit failure paths
+
+A powerful way of using this monad is by combining `Map()` and `Bind()`. Aside from making the code more fluent, the execution path will short circuit and return as soon as a failure state is encountered:
+
+```C#
+Try<int> tryResult = Increment1(1)
+   .Bind(Increment2)
+   .Map(Increment3);
+
+string result = tryResult.Match(
+   exception => $"Failed: {exception.Message}",
+   value => $"Passed: {value}");
+
+private static Try<int> Increment1(int x)
+{
+   return Try.Create(() => x + 1);
+}
+
+private static Try<int> Increment2(int x)
+{
+   return Try.FromException<int>(new Exception("Failed!"));
+}
+
+// This method will never get executed since the previous method threw an exception
+private static int Increment3(int x)
+{
+   return x + 3;
+}
+```
